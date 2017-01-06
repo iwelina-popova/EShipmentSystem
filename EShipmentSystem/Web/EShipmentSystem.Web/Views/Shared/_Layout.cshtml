@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - EShipmentSystem.Web</title>
+    <title>@ViewData["Title"] - E-Shipment</title>
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -63,7 +63,10 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
+    <!-- loader -->
+    <div class="loader"><h1 class="loadingtext">Admin<span>9</span></h1><p>Awesome things getting ready...</p><br><img src="../img/loader2.gif" alt=""> </div>
+    <!-- loader ends -->
+    Go to <a href="pages/index.html">/pages/index.html</a>
     @RenderSection("scripts", required: false)
 </body>
 </html>
