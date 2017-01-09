@@ -8,7 +8,7 @@ import { AuthService } from './core/services/auth.service';
 enableProdMode();
 
 @Component({
-    selector: 'fs-app',
+    selector: 'e-app',
     templateUrl: './app/app.component.html'
 })
 export class AppComponent implements OnInit {

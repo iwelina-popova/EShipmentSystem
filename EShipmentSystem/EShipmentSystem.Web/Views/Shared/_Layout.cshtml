@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - E-Shipment</title>
     <base href="/" />
 
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -29,12 +30,8 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2016 - EShipmentSystem</p>
-        </footer>
     </div>
 
     <environment names="Development">
