@@ -1,8 +1,9 @@
 ﻿namespace EShipmentSystem.Data.Models
 {
+    using System.Collections.Generic;
     using BaseEntities;
 
-    public class ReceiverSenderData : BaseEntity<int>
+    public class Receiver: BaseEntity<int>
     {
         public string Name { get; set; }
 
@@ -21,5 +22,7 @@
         public string ZipCode { get; set; }
 
         public string OptionalInfo { get; set; }
+
+        public ICollection<ShipmentData> ShipmentDatas { get; set; } = new List<ShipmentData>();
     }
 }

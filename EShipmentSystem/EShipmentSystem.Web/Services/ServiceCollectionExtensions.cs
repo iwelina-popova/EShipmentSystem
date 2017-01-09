@@ -15,7 +15,7 @@
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             services.AddScoped<IAdditionalOptionsService, AdditionalOptionsService>();
-            services.AddScoped<IReceiverSenderDataService, ReceiverSenderDataService>();
+            services.AddScoped<IReceiverService, ReceiverService>();
             services.AddScoped<IShipmentDataService, ShipmentDataService>();
 
             services.AddScoped<IMapper>(sp => ConfigurateAutoMapper(services).CreateMapper());

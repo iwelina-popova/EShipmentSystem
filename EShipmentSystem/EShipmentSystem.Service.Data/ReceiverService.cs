@@ -6,16 +6,16 @@
     using EShipmentSystem.Data.Models;
     using EShipmentSystem.Data.Repositories;
 
-    public class ReceiverSenderDataService : IReceiverSenderDataService
+    public class ReceiverService : IReceiverService
     {
-        private readonly IRepository<ReceiverSenderData> repo;
+        private readonly IRepository<Receiver> repo;
 
-        public ReceiverSenderDataService(IRepository<ReceiverSenderData> repo)
+        public ReceiverService(IRepository<Receiver> repo)
         {
             this.repo = repo;
         }
 
-        public void Create(ReceiverSenderData data)
+        public void Create(Receiver data)
         {
             this.repo.Add(data);
             this.repo.SaveChanges();
@@ -28,17 +28,17 @@
             this.repo.SaveChanges();
         }
 
-        public IQueryable<ReceiverSenderData> GetAll()
+        public IQueryable<Receiver> GetAll()
         {
             return this.repo.All();
         }
 
-        public IQueryable<ReceiverSenderData> GetAllWithDeleted()
+        public IQueryable<Receiver> GetAllWithDeleted()
         {
             return this.repo.AllWithDeleted();
         }
 
-        public ReceiverSenderData GetById(int id)
+        public Receiver GetById(int id)
         {
             return this.repo
                 .All()

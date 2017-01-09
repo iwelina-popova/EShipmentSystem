@@ -40,19 +40,26 @@ namespace EShipmentSystem.Data.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
+                    Address = table.Column<string>(nullable: true),
+                    City = table.Column<string>(nullable: true),
+                    CompanyName = table.Column<string>(nullable: true),
                     ConcurrencyStamp = table.Column<string>(nullable: true),
+                    Country = table.Column<string>(nullable: true),
                     Email = table.Column<string>(maxLength: 256, nullable: true),
                     EmailConfirmed = table.Column<bool>(nullable: false),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
+                    Neighborhood = table.Column<string>(nullable: true),
                     NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
                     PasswordHash = table.Column<string>(nullable: true),
+                    Phone = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
                     PhoneNumberConfirmed = table.Column<bool>(nullable: false),
                     SecurityStamp = table.Column<string>(nullable: true),
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
-                    UserName = table.Column<string>(maxLength: 256, nullable: true)
+                    UserName = table.Column<string>(maxLength: 256, nullable: true),
+                    ZipCode = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -60,7 +67,7 @@ namespace EShipmentSystem.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ReceiverSenderDatas",
+                name: "Receivers",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -84,7 +91,7 @@ namespace EShipmentSystem.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReceiverSenderDatas", x => x.Id);
+                    table.PrimaryKey("PK_Receivers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -174,8 +181,8 @@ namespace EShipmentSystem.Data.Migrations
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     ReceiverId = table.Column<int>(nullable: false),
                     SenderId = table.Column<int>(nullable: false),
+                    SenderId1 = table.Column<string>(nullable: true),
                     Type = table.Column<int>(nullable: false),
-                    UserId = table.Column<string>(nullable: true),
                     Weight = table.Column<double>(nullable: false),
                     Width = table.Column<double>(nullable: false)
                 },
@@ -189,20 +196,14 @@ namespace EShipmentSystem.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ShipmentDatas_ReceiverSenderDatas_ReceiverId",
+                        name: "FK_ShipmentDatas_Receivers_ReceiverId",
                         column: x => x.ReceiverId,
-                        principalTable: "ReceiverSenderDatas",
+                        principalTable: "Receivers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ShipmentDatas_ReceiverSenderDatas_SenderId",
-                        column: x => x.SenderId,
-                        principalTable: "ReceiverSenderDatas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ShipmentDatas_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_ShipmentDatas_AspNetUsers_SenderId1",
+                        column: x => x.SenderId1,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -275,14 +276,9 @@ namespace EShipmentSystem.Data.Migrations
                 column: "ReceiverId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShipmentDatas_SenderId",
+                name: "IX_ShipmentDatas_SenderId1",
                 table: "ShipmentDatas",
-                column: "SenderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ShipmentDatas_UserId",
-                table: "ShipmentDatas",
-                column: "UserId");
+                column: "SenderId1");
 
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
@@ -339,7 +335,7 @@ namespace EShipmentSystem.Data.Migrations
                 name: "AdditionalOptions");
 
             migrationBuilder.DropTable(
-                name: "ReceiverSenderDatas");
+                name: "Receivers");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

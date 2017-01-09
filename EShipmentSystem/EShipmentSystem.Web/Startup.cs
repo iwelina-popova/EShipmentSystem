@@ -81,13 +81,19 @@
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>()
+                .CreateScope())
+            {
+                serviceScope.ServiceProvider.GetService<EShipmentSystemDbContext>().Database.Migrate();
+                serviceScope.ServiceProvider.GetService<EShipmentSystemDbContext>().SeedData();
+            }
+
             app.UseApplicationInsightsExceptionTelemetry();
 
-            app.UseStaticFiles();
-
-            app.UseIdentity();
-            
-            app.UseMvc();
+            app
+                .UseStaticFiles()
+                .UseIdentity()
+                .UseMvc();
         }
     }
 }

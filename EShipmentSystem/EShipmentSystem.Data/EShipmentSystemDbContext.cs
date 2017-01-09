@@ -19,13 +19,23 @@
 
         public DbSet<AdditionalOptions> AdditionalOptions { get; set; }
 
-        public DbSet<ReceiverSenderData> ReceiverSenderDatas { get; set; }
+        public DbSet<Receiver> Receivers { get; set; }
 
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();
             return base.SaveChanges();
         }
+
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+        //    base.OnModelCreating(builder);
+
+        //    builder.Entity<ShipmentData>()
+        //        .HasOne(sd => sd.User)
+        //        .WithMany(u => u.ShipmentDatas);
+
+        //}
 
         private void ApplyAuditInfoRules()
         {

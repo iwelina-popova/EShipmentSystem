@@ -16,15 +16,11 @@
 
         public int SenderId { get; set; }
 
-        public ReceiverSenderData Sender { get; set; }
+        public ApplicationUser Sender { get; set; }
 
         public int ReceiverId { get; set; }
 
-        public ReceiverSenderData Receiver { get; set; }
-
-        public string UserId { get; set; }
-
-        public ApplicationUser User { get; set; }
+        public Receiver Receiver { get; set; }
 
         public int AdditionalOptionsId { get; set; }
 

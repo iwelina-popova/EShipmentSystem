@@ -1,5 +1,6 @@
 ﻿namespace EShipmentSystem.Data.Models
 {
+    using System.Collections.Generic;
     using BaseEntities;
 
     public class AdditionalOptions : BaseEntity<int>
@@ -15,5 +16,8 @@
         public bool ReturnShipment { get; set; }
 
         public bool ReviewShipment { get; set; }
+
+        public ICollection<ShipmentData> ShipmentDatas { get; set; } = new List<ShipmentData>();
+
     }
 }

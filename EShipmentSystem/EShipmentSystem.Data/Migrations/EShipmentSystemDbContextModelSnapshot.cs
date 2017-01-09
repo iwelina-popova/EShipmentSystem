@@ -58,8 +58,16 @@ namespace EShipmentSystem.Data.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
+                    b.Property<string>("Address");
+
+                    b.Property<string>("City");
+
+                    b.Property<string>("CompanyName");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
+
+                    b.Property<string>("Country");
 
                     b.Property<string>("Email")
                         .HasAnnotation("MaxLength", 256);
@@ -70,6 +78,8 @@ namespace EShipmentSystem.Data.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
+                    b.Property<string>("Neighborhood");
+
                     b.Property<string>("NormalizedEmail")
                         .HasAnnotation("MaxLength", 256);
 
@@ -77,6 +87,8 @@ namespace EShipmentSystem.Data.Migrations
                         .HasAnnotation("MaxLength", 256);
 
                     b.Property<string>("PasswordHash");
+
+                    b.Property<string>("Phone");
 
                     b.Property<string>("PhoneNumber");
 
@@ -88,6 +100,8 @@ namespace EShipmentSystem.Data.Migrations
 
                     b.Property<string>("UserName")
                         .HasAnnotation("MaxLength", 256);
+
+                    b.Property<string>("ZipCode");
 
                     b.HasKey("Id");
 
@@ -101,7 +115,7 @@ namespace EShipmentSystem.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("EShipmentSystem.Data.Models.ReceiverSenderData", b =>
+            modelBuilder.Entity("EShipmentSystem.Data.Models.Receiver", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -140,7 +154,7 @@ namespace EShipmentSystem.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ReceiverSenderDatas");
+                    b.ToTable("Receivers");
                 });
 
             modelBuilder.Entity("EShipmentSystem.Data.Models.ShipmentData", b =>
@@ -172,9 +186,9 @@ namespace EShipmentSystem.Data.Migrations
 
                     b.Property<int>("SenderId");
 
-                    b.Property<int>("Type");
+                    b.Property<string>("SenderId1");
 
-                    b.Property<string>("UserId");
+                    b.Property<int>("Type");
 
                     b.Property<double>("Weight");
 
@@ -186,9 +200,7 @@ namespace EShipmentSystem.Data.Migrations
 
                     b.HasIndex("ReceiverId");
 
-                    b.HasIndex("SenderId");
-
-                    b.HasIndex("UserId");
+                    b.HasIndex("SenderId1");
 
                     b.ToTable("ShipmentDatas");
                 });
@@ -303,23 +315,18 @@ namespace EShipmentSystem.Data.Migrations
             modelBuilder.Entity("EShipmentSystem.Data.Models.ShipmentData", b =>
                 {
                     b.HasOne("EShipmentSystem.Data.Models.AdditionalOptions", "AdditionalOptions")
-                        .WithMany()
+                        .WithMany("ShipmentDatas")
                         .HasForeignKey("AdditionalOptionsId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("EShipmentSystem.Data.Models.ReceiverSenderData", "Receiver")
-                        .WithMany()
+                    b.HasOne("EShipmentSystem.Data.Models.Receiver", "Receiver")
+                        .WithMany("ShipmentDatas")
                         .HasForeignKey("ReceiverId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("EShipmentSystem.Data.Models.ReceiverSenderData", "Sender")
-                        .WithMany()
-                        .HasForeignKey("SenderId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("EShipmentSystem.Data.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
+                    b.HasOne("EShipmentSystem.Data.Models.ApplicationUser", "Sender")
+                        .WithMany("ShipmentDatas")
+                        .HasForeignKey("SenderId1");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
