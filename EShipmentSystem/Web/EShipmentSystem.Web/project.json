@@ -45,10 +45,9 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "EShipmentSystem.Data": "1.0.0-*",
     "AutoMapper": "5.2.0",
-    "EShipmentSystem.Service.Data": "1.0.0-*"
-  },
+    "EShipmentSystem.Data": "1.0.0-*",
+    "EShipmentSystem.Service.Data": "1.0.0-*"  },
 
   "tools": {
     "BundlerMinifier.Core": "2.0.238",
