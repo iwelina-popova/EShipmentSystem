@@ -25,6 +25,7 @@
             var data = new Receiver
             {
                 Name = "Test name",
+                Phone = "088 888 8888",
                 Country = "Bulgaria",
                 City = "Sofia",
                 Address = "block 2",

@@ -3,10 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - E-Shipment</title>
-    <base href="/" />
+    <title>@ViewData["Title"] - EShipmentSystem.Web</title>
 
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+    @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -30,8 +39,12 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="container body-content">
         @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2017 - EShipmentSystem.Web</p>
+        </footer>
     </div>
 
     <environment names="Development">
@@ -50,10 +63,7 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-    <!-- loader -->
-    <div class="loader"><h1 class="loadingtext">Admin<span>9</span></h1><p>Awesome things getting ready...</p><br><img src="../img/loader2.gif" alt=""> </div>
-    <!-- loader ends -->
-    Go to <a href="pages/index.html">/pages/index.html</a>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

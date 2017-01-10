@@ -8,9 +8,9 @@
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
 
-    using Services;
     using Data;
     using Data.Models;
+    using Services;
 
     public class Startup
     {
@@ -92,8 +92,15 @@
 
             app
                 .UseStaticFiles()
-                .UseIdentity()
-                .UseMvc();
+                .UseIdentity();
+
+            app.UseMvc(rb =>
+            {
+                rb.MapRoute(
+                    name: "default",
+                    template: "{controller}/{action}/{id?}",
+                    defaults: new { controller = "Home", action = "Index" });
+            });
         }
     }
 }

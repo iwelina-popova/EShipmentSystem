@@ -1,5 +1,5 @@
 {
-  "userSecretsId": "aspnet-EShipmentSystem.Web-c668e47c-2302-4b7c-b86e-1937e60524e8",
+  "userSecretsId": "aspnet-EShipmentSystem.Web-b9f7ed05-801e-45b9-be5d-8944e6d98e88",
 
   "dependencies": {
     "Microsoft.NETCore.App": {
@@ -47,9 +47,8 @@
     },
     "AutoMapper": "5.2.0",
     "EShipmentSystem.Data": "1.0.0-*",
-    "EShipmentSystem.Service.Data": "1.0.0-*",
-    "Microsoft.EntityFrameworkCore": "1.0.1",
-    "System.Reflection.TypeExtensions": "4.3.0"  },
+    "EShipmentSystem.Services": "1.0.0-*"
+  },
 
   "tools": {
     "BundlerMinifier.Core": "2.0.238",

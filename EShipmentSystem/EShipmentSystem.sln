@@ -3,16 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BD88AC94-4B48-4C97-89BF-48B94577C32B}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "EShipmentSystem.Data", "EShipmentSystem.Data\EShipmentSystem.Data.xproj", "{4E4C8523-F80D-4774-9CC7-2F94664F31F5}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "EShipmentSystem.Data", "EShipmentSystem.Data\EShipmentSystem.Data.xproj", "{DDBC00A4-3DF7-4D90-8B6D-68716651BB3D}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "EShipmentSystem.Web", "EShipmentSystem.Web\EShipmentSystem.Web.xproj", "{DC00E35E-C476-4706-B930-327B3554228C}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "EShipmentSystem.Service.Data", "EShipmentSystem.Service.Data\EShipmentSystem.Service.Data.xproj", "{566F0ACA-FEB3-4859-9CC2-21C8D937139E}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "EShipmentSystem.Web", "EShipmentSystem.Web\EShipmentSystem.Web.xproj", "{C5B400A1-6EB2-4829-9271-7356540D89FF}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "EShipmentSystem.Services", "EShipmentSystem.Services\EShipmentSystem.Services.xproj", "{C85B49E4-F758-41A0-942A-8DE75A994817}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DDBC00A4-3DF7-4D90-8B6D-68716651BB3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDBC00A4-3DF7-4D90-8B6D-68716651BB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDBC00A4-3DF7-4D90-8B6D-68716651BB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDBC00A4-3DF7-4D90-8B6D-68716651BB3D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{566F0ACA-FEB3-4859-9CC2-21C8D937139E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{566F0ACA-FEB3-4859-9CC2-21C8D937139E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{566F0ACA-FEB3-4859-9CC2-21C8D937139E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{566F0ACA-FEB3-4859-9CC2-21C8D937139E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C5B400A1-6EB2-4829-9271-7356540D89FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5B400A1-6EB2-4829-9271-7356540D89FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5B400A1-6EB2-4829-9271-7356540D89FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5B400A1-6EB2-4829-9271-7356540D89FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E4C8523-F80D-4774-9CC7-2F94664F31F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E4C8523-F80D-4774-9CC7-2F94664F31F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E4C8523-F80D-4774-9CC7-2F94664F31F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E4C8523-F80D-4774-9CC7-2F94664F31F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC00E35E-C476-4706-B930-327B3554228C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC00E35E-C476-4706-B930-327B3554228C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC00E35E-C476-4706-B930-327B3554228C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC00E35E-C476-4706-B930-327B3554228C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C85B49E4-F758-41A0-942A-8DE75A994817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C85B49E4-F758-41A0-942A-8DE75A994817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C85B49E4-F758-41A0-942A-8DE75A994817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C85B49E4-F758-41A0-942A-8DE75A994817}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

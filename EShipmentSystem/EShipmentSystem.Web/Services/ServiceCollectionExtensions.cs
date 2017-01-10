@@ -5,8 +5,9 @@
 
     using Data.Repositories;
     using Infrastructure.Mappings;
-    using Service.Data;
-    using Service.Data.Contracts;
+
+    using EShipmentSystem.Services.Contracts;
+    using EShipmentSystem.Services;
 
     public static class ServiceCollectionExtensions
     {

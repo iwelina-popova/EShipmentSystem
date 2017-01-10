@@ -9,7 +9,7 @@
         [Required]
         [MaxLength(20)]
         public string Phone { get; set; }
-        
+
         public string CompanyName { get; set; }
 
         [Required]
@@ -30,7 +30,7 @@
         [Required]
         [MaxLength(50)]
         public string ZipCode { get; set; }
-        
+
         public ICollection<ShipmentData> ShipmentDatas { get; set; } = new List<ShipmentData>();
     }
 }

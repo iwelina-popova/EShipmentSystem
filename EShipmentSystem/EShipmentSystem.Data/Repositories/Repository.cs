@@ -11,7 +11,7 @@
     {
         public Repository(EShipmentSystemDbContext context)
         {
-            if(context == null)
+            if (context == null)
             {
                 throw new ArgumentException("An instance of DbContext is required to use this repository.", nameof(context));
             }

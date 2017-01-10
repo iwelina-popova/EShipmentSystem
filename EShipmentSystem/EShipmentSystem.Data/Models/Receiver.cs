@@ -4,7 +4,7 @@
     using System.ComponentModel.DataAnnotations;
     using BaseEntities;
 
-    public class Receiver: BaseEntity<int>
+    public class Receiver : BaseEntity<int>
     {
         [Required]
         [MaxLength(50)]
@@ -13,7 +13,7 @@
         [Required]
         [MaxLength(50)]
         public string Phone { get; set; }
-        
+
         [MaxLength(100)]
         public string Email { get; set; }
 
